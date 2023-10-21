@@ -1,0 +1,13 @@
+apply plugin:'com.android.library'
+
+apply from:"${rootProject.rootDir}/common.gradle"
+android {
+    namespace = "com.example.lib_base"
+}
+
+dependencies {
+    api(DependenciesConfig.LIVEDATA_KTX)
+    api(DependenciesConfig.STATUS_BAR_UTILS)
+    api(DependenciesConfig.EVENT_BUS)
+    implementation(DependenciesConfig.FRAGMENT_KTX)
+}

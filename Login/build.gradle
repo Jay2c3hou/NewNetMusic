@@ -1,0 +1,29 @@
+if (ModuleConfig.isModule){
+    apply plugin:'com.android.library'
+}else{
+    apply plugin:'com.android.application'
+}
+apply plugin: 'kotlin-kapt'
+apply from:"${rootProject.rootDir}/common.gradle"
+apply plugin: 'org.jetbrains.kotlin.android'
+android {
+    namespace "com.example.login"
+    compileSdk Versions.compileSdk
+
+    defaultConfig {
+        if (!ModuleConfig.isModule){
+            applicationId 'com.example.login'
+            versionCode Versions.versionCode
+            versionName Versions.versionName
+        }
+    }
+
+}
+
+dependencies {
+    implementation("org.sufficientlysecure:html-textview:4.0")
+    api(DependenciesConfig.NAVIGATION_FRAGMENT_KTX)
+    api(DependenciesConfig.NAVIGATION_UI_KTX)
+    api(project(":lib_base"))
+    api(project(":lib_common_ui"))
+}

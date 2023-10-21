@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from:"${rootProject.rootDir}/common.gradle"
+
+android {
+    namespace 'com.example.newnetmusic'
+    defaultConfig {
+        applicationId "com.example.newnetmusic"
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+    }
+}
+
+dependencies {
+    implementation(project(":Login"))
+    implementation(DependenciesConfig.GLIDE)
+   // implementation(project(":lib_audio"))
+}

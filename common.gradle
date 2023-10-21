@@ -1,0 +1,53 @@
+apply plugin:'org.jetbrains.kotlin.android'
+
+android {
+    compileSdk Versions.compileSdk
+
+    buildFeatures{
+        dataBinding  true
+        viewBinding true
+    }
+
+    defaultConfig {
+        minSdk Versions.minSdk
+        targetSdk Versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+
+    implementation(DependenciesConfig.CORE_KTX)
+    implementation(DependenciesConfig.APP_COMPAT)
+    implementation(DependenciesConfig.MATERIAL)
+    implementation(DependenciesConfig.CONSTRAINT_LAYOUT)
+
+    //Bmob
+    api(DependenciesConfig.BMOB_SDK)
+    implementation(DependenciesConfig.RXJAVA)
+    implementation(DependenciesConfig.RXANDROID)
+    implementation(DependenciesConfig.OK_HTTP)
+    implementation(DependenciesConfig.OKIO)
+    implementation(DependenciesConfig.GSON)
+
+    //Coroutine
+    implementation(DependenciesConfig.COROUTINE_ANDROID)
+    implementation(DependenciesConfig.VIEWMODEL_KTX)
+    implementation(DependenciesConfig.RUNTIME_KTX)
+}

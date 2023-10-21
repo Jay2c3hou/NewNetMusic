@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="delete_circle_radius">10dp</dimen>
+    <dimen name="delete_circle_size">20dp</dimen>
+    <dimen name="login_btn_corner_radius">25dp</dimen>
+    <dimen name="login_btn_height">50dp</dimen>
+    <dimen name="agreement_text_size">12sp</dimen>
+    <dimen name="login_alert_height">50dp</dimen>
+    <dimen name="login_alert_radius">25dp</dimen>
+    <dimen name="text_round_rect_radius">15dp</dimen>
+</resources>
